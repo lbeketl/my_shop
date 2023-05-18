@@ -11,8 +11,9 @@
     <%= favicon_link_tag asset_path("logo.png") %>
   </head>
 
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen relative">
     <%= render "shared/header" %>
+    <%= render "shared/flash_messages" %>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>
