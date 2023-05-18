@@ -4,7 +4,9 @@ class ProductsController < ApplicationController
     @products = collection
   end
 
-  def show; end
+  def show
+    @product = resource
+  end
 
   def new
     @product = Product.new
@@ -30,7 +32,7 @@ class ProductsController < ApplicationController
       redirect_to product_url(@product)
       flash[:success] = "Product has been succesfully updated."
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
